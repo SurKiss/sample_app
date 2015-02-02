@@ -14273,3 +14273,405 @@ Processing by UsersController#index as HTML
   Rendered layouts/_header.html.erb (0.7ms)
   Rendered layouts/_footer.html.erb (0.2ms)
 Completed 200 OK in 127ms (Views: 125.1ms | ActiveRecord: 1.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateMicroposts (20150202134120)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateMicroposts (20150202134120)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateMicroposts (20150202134120)
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateMicroposts (20150202134120)
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateMicroposts (20150202134120)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (21.5ms)[0m  [1mCREATE TABLE "microposts" ("id" serial primary key, "content" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.7ms)[0m  CREATE  INDEX  "index_microposts_on_user_id" ON "microposts"  ("user_id")
+  [1m[36m (1.4ms)[0m  [1mCREATE  INDEX  "index_microposts_on_created_at" ON "microposts"  ("created_at")[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150202134120"]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (5.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'microposts'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.9ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Omnis beatae ut eaque est voluptatem rem vitae fugit."], ["user_id", 3], ["created_at", "2015-02-02 14:55:00.905499"], ["updated_at", "2015-02-02 14:55:00.905499"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Omnis beatae ut eaque est voluptatem rem vitae fugit."], ["user_id", 2], ["created_at", "2015-02-02 14:55:00.912980"], ["updated_at", "2015-02-02 14:55:00.912980"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Omnis beatae ut eaque est voluptatem rem vitae fugit."], ["user_id", 5], ["created_at", "2015-02-02 14:55:00.916202"], ["updated_at", "2015-02-02 14:55:00.916202"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Omnis beatae ut eaque est voluptatem rem vitae fugit."], ["user_id", 1], ["created_at", "2015-02-02 14:55:00.919558"], ["updated_at", "2015-02-02 14:55:00.919558"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Cumque nihil repellat omnis pariatur eligendi necessitatibus cupiditate."], ["user_id", 3], ["created_at", "2015-02-02 14:55:00.922574"], ["updated_at", "2015-02-02 14:55:00.922574"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Cumque nihil repellat omnis pariatur eligendi necessitatibus cupiditate."], ["user_id", 2], ["created_at", "2015-02-02 14:55:00.925535"], ["updated_at", "2015-02-02 14:55:00.925535"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Cumque nihil repellat omnis pariatur eligendi necessitatibus cupiditate."], ["user_id", 5], ["created_at", "2015-02-02 14:55:00.928506"], ["updated_at", "2015-02-02 14:55:00.928506"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Cumque nihil repellat omnis pariatur eligendi necessitatibus cupiditate."], ["user_id", 1], ["created_at", "2015-02-02 14:55:00.931765"], ["updated_at", "2015-02-02 14:55:00.931765"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Consectetur delectus similique nihil neque cumque."], ["user_id", 3], ["created_at", "2015-02-02 14:55:00.935057"], ["updated_at", "2015-02-02 14:55:00.935057"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Consectetur delectus similique nihil neque cumque."], ["user_id", 2], ["created_at", "2015-02-02 14:55:00.937911"], ["updated_at", "2015-02-02 14:55:00.937911"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Consectetur delectus similique nihil neque cumque."], ["user_id", 5], ["created_at", "2015-02-02 14:55:00.940975"], ["updated_at", "2015-02-02 14:55:00.940975"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Consectetur delectus similique nihil neque cumque."], ["user_id", 1], ["created_at", "2015-02-02 14:55:00.944353"], ["updated_at", "2015-02-02 14:55:00.944353"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Quia excepturi fuga ut sunt."], ["user_id", 3], ["created_at", "2015-02-02 14:55:00.947324"], ["updated_at", "2015-02-02 14:55:00.947324"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Quia excepturi fuga ut sunt."], ["user_id", 2], ["created_at", "2015-02-02 14:55:00.951311"], ["updated_at", "2015-02-02 14:55:00.951311"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Quia excepturi fuga ut sunt."], ["user_id", 5], ["created_at", "2015-02-02 14:55:00.954747"], ["updated_at", "2015-02-02 14:55:00.954747"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Quia excepturi fuga ut sunt."], ["user_id", 1], ["created_at", "2015-02-02 14:55:00.957890"], ["updated_at", "2015-02-02 14:55:00.957890"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Qui alias perferendis consectetur quia error optio."], ["user_id", 3], ["created_at", "2015-02-02 14:55:00.961132"], ["updated_at", "2015-02-02 14:55:00.961132"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Qui alias perferendis consectetur quia error optio."], ["user_id", 2], ["created_at", "2015-02-02 14:55:00.964443"], ["updated_at", "2015-02-02 14:55:00.964443"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Qui alias perferendis consectetur quia error optio."], ["user_id", 5], ["created_at", "2015-02-02 14:55:00.967503"], ["updated_at", "2015-02-02 14:55:00.967503"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Qui alias perferendis consectetur quia error optio."], ["user_id", 1], ["created_at", "2015-02-02 14:55:00.970336"], ["updated_at", "2015-02-02 14:55:00.970336"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Dolore inventore occaecati repudiandae dignissimos incidunt magnam nisi quibusdam."], ["user_id", 3], ["created_at", "2015-02-02 14:55:00.973645"], ["updated_at", "2015-02-02 14:55:00.973645"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Dolore inventore occaecati repudiandae dignissimos incidunt magnam nisi quibusdam."], ["user_id", 2], ["created_at", "2015-02-02 14:55:00.976597"], ["updated_at", "2015-02-02 14:55:00.976597"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Dolore inventore occaecati repudiandae dignissimos incidunt magnam nisi quibusdam."], ["user_id", 5], ["created_at", "2015-02-02 14:55:00.979408"], ["updated_at", "2015-02-02 14:55:00.979408"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Dolore inventore occaecati repudiandae dignissimos incidunt magnam nisi quibusdam."], ["user_id", 1], ["created_at", "2015-02-02 14:55:00.982400"], ["updated_at", "2015-02-02 14:55:00.982400"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Est et culpa voluptas ut."], ["user_id", 3], ["created_at", "2015-02-02 14:55:00.985497"], ["updated_at", "2015-02-02 14:55:00.985497"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Est et culpa voluptas ut."], ["user_id", 2], ["created_at", "2015-02-02 14:55:00.988792"], ["updated_at", "2015-02-02 14:55:00.988792"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Est et culpa voluptas ut."], ["user_id", 5], ["created_at", "2015-02-02 14:55:00.991805"], ["updated_at", "2015-02-02 14:55:00.991805"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Est et culpa voluptas ut."], ["user_id", 1], ["created_at", "2015-02-02 14:55:00.995127"], ["updated_at", "2015-02-02 14:55:00.995127"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Aspernatur rerum dolorum ea unde."], ["user_id", 3], ["created_at", "2015-02-02 14:55:00.998666"], ["updated_at", "2015-02-02 14:55:00.998666"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Aspernatur rerum dolorum ea unde."], ["user_id", 2], ["created_at", "2015-02-02 14:55:01.002045"], ["updated_at", "2015-02-02 14:55:01.002045"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Aspernatur rerum dolorum ea unde."], ["user_id", 5], ["created_at", "2015-02-02 14:55:01.005171"], ["updated_at", "2015-02-02 14:55:01.005171"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Aspernatur rerum dolorum ea unde."], ["user_id", 1], ["created_at", "2015-02-02 14:55:01.008352"], ["updated_at", "2015-02-02 14:55:01.008352"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Reprehenderit deleniti error ipsam quisquam quibusdam est."], ["user_id", 3], ["created_at", "2015-02-02 14:55:01.011257"], ["updated_at", "2015-02-02 14:55:01.011257"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Reprehenderit deleniti error ipsam quisquam quibusdam est."], ["user_id", 2], ["created_at", "2015-02-02 14:55:01.014012"], ["updated_at", "2015-02-02 14:55:01.014012"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Reprehenderit deleniti error ipsam quisquam quibusdam est."], ["user_id", 5], ["created_at", "2015-02-02 14:55:01.016778"], ["updated_at", "2015-02-02 14:55:01.016778"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Reprehenderit deleniti error ipsam quisquam quibusdam est."], ["user_id", 1], ["created_at", "2015-02-02 14:55:01.019571"], ["updated_at", "2015-02-02 14:55:01.019571"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Ea impedit ab est nostrum quae iste alias."], ["user_id", 3], ["created_at", "2015-02-02 14:55:01.022386"], ["updated_at", "2015-02-02 14:55:01.022386"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Ea impedit ab est nostrum quae iste alias."], ["user_id", 2], ["created_at", "2015-02-02 14:55:01.025246"], ["updated_at", "2015-02-02 14:55:01.025246"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Ea impedit ab est nostrum quae iste alias."], ["user_id", 5], ["created_at", "2015-02-02 14:55:01.027886"], ["updated_at", "2015-02-02 14:55:01.027886"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Ea impedit ab est nostrum quae iste alias."], ["user_id", 1], ["created_at", "2015-02-02 14:55:01.030706"], ["updated_at", "2015-02-02 14:55:01.030706"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Et rem doloribus aut sit."], ["user_id", 3], ["created_at", "2015-02-02 14:55:01.033551"], ["updated_at", "2015-02-02 14:55:01.033551"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Et rem doloribus aut sit."], ["user_id", 2], ["created_at", "2015-02-02 14:55:01.036303"], ["updated_at", "2015-02-02 14:55:01.036303"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Et rem doloribus aut sit."], ["user_id", 5], ["created_at", "2015-02-02 14:55:01.039029"], ["updated_at", "2015-02-02 14:55:01.039029"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Et rem doloribus aut sit."], ["user_id", 1], ["created_at", "2015-02-02 14:55:01.041794"], ["updated_at", "2015-02-02 14:55:01.041794"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Distinctio debitis quasi doloremque eaque aut reprehenderit quo."], ["user_id", 3], ["created_at", "2015-02-02 14:55:01.044490"], ["updated_at", "2015-02-02 14:55:01.044490"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Distinctio debitis quasi doloremque eaque aut reprehenderit quo."], ["user_id", 2], ["created_at", "2015-02-02 14:55:01.047753"], ["updated_at", "2015-02-02 14:55:01.047753"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Distinctio debitis quasi doloremque eaque aut reprehenderit quo."], ["user_id", 5], ["created_at", "2015-02-02 14:55:01.050728"], ["updated_at", "2015-02-02 14:55:01.050728"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Distinctio debitis quasi doloremque eaque aut reprehenderit quo."], ["user_id", 1], ["created_at", "2015-02-02 14:55:01.053921"], ["updated_at", "2015-02-02 14:55:01.053921"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Sit voluptas commodi iusto totam cum laudantium."], ["user_id", 3], ["created_at", "2015-02-02 14:55:01.057089"], ["updated_at", "2015-02-02 14:55:01.057089"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Sit voluptas commodi iusto totam cum laudantium."], ["user_id", 2], ["created_at", "2015-02-02 14:55:01.060116"], ["updated_at", "2015-02-02 14:55:01.060116"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Sit voluptas commodi iusto totam cum laudantium."], ["user_id", 5], ["created_at", "2015-02-02 14:55:01.063232"], ["updated_at", "2015-02-02 14:55:01.063232"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Sit voluptas commodi iusto totam cum laudantium."], ["user_id", 1], ["created_at", "2015-02-02 14:55:01.066147"], ["updated_at", "2015-02-02 14:55:01.066147"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Id iusto harum accusamus est accusantium ut ex."], ["user_id", 3], ["created_at", "2015-02-02 14:55:01.069439"], ["updated_at", "2015-02-02 14:55:01.069439"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Id iusto harum accusamus est accusantium ut ex."], ["user_id", 2], ["created_at", "2015-02-02 14:55:01.072609"], ["updated_at", "2015-02-02 14:55:01.072609"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Id iusto harum accusamus est accusantium ut ex."], ["user_id", 5], ["created_at", "2015-02-02 14:55:01.075995"], ["updated_at", "2015-02-02 14:55:01.075995"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Id iusto harum accusamus est accusantium ut ex."], ["user_id", 1], ["created_at", "2015-02-02 14:55:01.079151"], ["updated_at", "2015-02-02 14:55:01.079151"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Sunt nisi modi beatae facilis quam aut omnis."], ["user_id", 3], ["created_at", "2015-02-02 14:55:01.082299"], ["updated_at", "2015-02-02 14:55:01.082299"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Sunt nisi modi beatae facilis quam aut omnis."], ["user_id", 2], ["created_at", "2015-02-02 14:55:01.085593"], ["updated_at", "2015-02-02 14:55:01.085593"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Sunt nisi modi beatae facilis quam aut omnis."], ["user_id", 5], ["created_at", "2015-02-02 14:55:01.088959"], ["updated_at", "2015-02-02 14:55:01.088959"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Sunt nisi modi beatae facilis quam aut omnis."], ["user_id", 1], ["created_at", "2015-02-02 14:55:01.092047"], ["updated_at", "2015-02-02 14:55:01.092047"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Corporis saepe eligendi voluptatum consequatur."], ["user_id", 3], ["created_at", "2015-02-02 14:55:01.095403"], ["updated_at", "2015-02-02 14:55:01.095403"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Corporis saepe eligendi voluptatum consequatur."], ["user_id", 2], ["created_at", "2015-02-02 14:55:01.098718"], ["updated_at", "2015-02-02 14:55:01.098718"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Corporis saepe eligendi voluptatum consequatur."], ["user_id", 5], ["created_at", "2015-02-02 14:55:01.101908"], ["updated_at", "2015-02-02 14:55:01.101908"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Corporis saepe eligendi voluptatum consequatur."], ["user_id", 1], ["created_at", "2015-02-02 14:55:01.105281"], ["updated_at", "2015-02-02 14:55:01.105281"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Assumenda asperiores dolor dolore similique qui labore."], ["user_id", 3], ["created_at", "2015-02-02 14:55:01.108585"], ["updated_at", "2015-02-02 14:55:01.108585"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Assumenda asperiores dolor dolore similique qui labore."], ["user_id", 2], ["created_at", "2015-02-02 14:55:01.111936"], ["updated_at", "2015-02-02 14:55:01.111936"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Assumenda asperiores dolor dolore similique qui labore."], ["user_id", 5], ["created_at", "2015-02-02 14:55:01.114890"], ["updated_at", "2015-02-02 14:55:01.114890"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Assumenda asperiores dolor dolore similique qui labore."], ["user_id", 1], ["created_at", "2015-02-02 14:55:01.117904"], ["updated_at", "2015-02-02 14:55:01.117904"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Deserunt ut quia totam error."], ["user_id", 3], ["created_at", "2015-02-02 14:55:01.121090"], ["updated_at", "2015-02-02 14:55:01.121090"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Deserunt ut quia totam error."], ["user_id", 2], ["created_at", "2015-02-02 14:55:01.124115"], ["updated_at", "2015-02-02 14:55:01.124115"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Deserunt ut quia totam error."], ["user_id", 5], ["created_at", "2015-02-02 14:55:01.127068"], ["updated_at", "2015-02-02 14:55:01.127068"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Deserunt ut quia totam error."], ["user_id", 1], ["created_at", "2015-02-02 14:55:01.130423"], ["updated_at", "2015-02-02 14:55:01.130423"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Natus quia aspernatur rerum quasi dicta nobis expedita blanditiis velit."], ["user_id", 3], ["created_at", "2015-02-02 14:55:01.133420"], ["updated_at", "2015-02-02 14:55:01.133420"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Natus quia aspernatur rerum quasi dicta nobis expedita blanditiis velit."], ["user_id", 2], ["created_at", "2015-02-02 14:55:01.136227"], ["updated_at", "2015-02-02 14:55:01.136227"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Natus quia aspernatur rerum quasi dicta nobis expedita blanditiis velit."], ["user_id", 5], ["created_at", "2015-02-02 14:55:01.139264"], ["updated_at", "2015-02-02 14:55:01.139264"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Natus quia aspernatur rerum quasi dicta nobis expedita blanditiis velit."], ["user_id", 1], ["created_at", "2015-02-02 14:55:01.142248"], ["updated_at", "2015-02-02 14:55:01.142248"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Soluta similique aut cum quod non qui deserunt repellendus."], ["user_id", 3], ["created_at", "2015-02-02 14:55:01.145018"], ["updated_at", "2015-02-02 14:55:01.145018"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Soluta similique aut cum quod non qui deserunt repellendus."], ["user_id", 2], ["created_at", "2015-02-02 14:55:01.147737"], ["updated_at", "2015-02-02 14:55:01.147737"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Soluta similique aut cum quod non qui deserunt repellendus."], ["user_id", 5], ["created_at", "2015-02-02 14:55:01.151240"], ["updated_at", "2015-02-02 14:55:01.151240"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Soluta similique aut cum quod non qui deserunt repellendus."], ["user_id", 1], ["created_at", "2015-02-02 14:55:01.154039"], ["updated_at", "2015-02-02 14:55:01.154039"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Dolorum ipsa sed consequatur quia."], ["user_id", 3], ["created_at", "2015-02-02 14:55:01.156721"], ["updated_at", "2015-02-02 14:55:01.156721"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Dolorum ipsa sed consequatur quia."], ["user_id", 2], ["created_at", "2015-02-02 14:55:01.159687"], ["updated_at", "2015-02-02 14:55:01.159687"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Dolorum ipsa sed consequatur quia."], ["user_id", 5], ["created_at", "2015-02-02 14:55:01.162775"], ["updated_at", "2015-02-02 14:55:01.162775"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Dolorum ipsa sed consequatur quia."], ["user_id", 1], ["created_at", "2015-02-02 14:55:01.165519"], ["updated_at", "2015-02-02 14:55:01.165519"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Non eveniet similique autem ut at voluptatem vero et."], ["user_id", 3], ["created_at", "2015-02-02 14:55:01.168966"], ["updated_at", "2015-02-02 14:55:01.168966"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Non eveniet similique autem ut at voluptatem vero et."], ["user_id", 2], ["created_at", "2015-02-02 14:55:01.171748"], ["updated_at", "2015-02-02 14:55:01.171748"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Non eveniet similique autem ut at voluptatem vero et."], ["user_id", 5], ["created_at", "2015-02-02 14:55:01.174762"], ["updated_at", "2015-02-02 14:55:01.174762"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Non eveniet similique autem ut at voluptatem vero et."], ["user_id", 1], ["created_at", "2015-02-02 14:55:01.177790"], ["updated_at", "2015-02-02 14:55:01.177790"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Eum natus iusto hic libero aut et aut aperiam soluta."], ["user_id", 3], ["created_at", "2015-02-02 14:55:01.180478"], ["updated_at", "2015-02-02 14:55:01.180478"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Eum natus iusto hic libero aut et aut aperiam soluta."], ["user_id", 2], ["created_at", "2015-02-02 14:55:01.183475"], ["updated_at", "2015-02-02 14:55:01.183475"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Eum natus iusto hic libero aut et aut aperiam soluta."], ["user_id", 5], ["created_at", "2015-02-02 14:55:01.186344"], ["updated_at", "2015-02-02 14:55:01.186344"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Eum natus iusto hic libero aut et aut aperiam soluta."], ["user_id", 1], ["created_at", "2015-02-02 14:55:01.189180"], ["updated_at", "2015-02-02 14:55:01.189180"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Et veritatis non animi quod."], ["user_id", 3], ["created_at", "2015-02-02 14:55:01.191968"], ["updated_at", "2015-02-02 14:55:01.191968"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Et veritatis non animi quod."], ["user_id", 2], ["created_at", "2015-02-02 14:55:01.195000"], ["updated_at", "2015-02-02 14:55:01.195000"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Et veritatis non animi quod."], ["user_id", 5], ["created_at", "2015-02-02 14:55:01.197732"], ["updated_at", "2015-02-02 14:55:01.197732"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Et veritatis non animi quod."], ["user_id", 1], ["created_at", "2015-02-02 14:55:01.200691"], ["updated_at", "2015-02-02 14:55:01.200691"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Facere est ipsa est non natus id nemo delectus."], ["user_id", 3], ["created_at", "2015-02-02 14:55:01.203823"], ["updated_at", "2015-02-02 14:55:01.203823"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Facere est ipsa est non natus id nemo delectus."], ["user_id", 2], ["created_at", "2015-02-02 14:55:01.206620"], ["updated_at", "2015-02-02 14:55:01.206620"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Facere est ipsa est non natus id nemo delectus."], ["user_id", 5], ["created_at", "2015-02-02 14:55:01.209501"], ["updated_at", "2015-02-02 14:55:01.209501"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Facere est ipsa est non natus id nemo delectus."], ["user_id", 1], ["created_at", "2015-02-02 14:55:01.212244"], ["updated_at", "2015-02-02 14:55:01.212244"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Voluptas nihil placeat in cumque necessitatibus harum vero."], ["user_id", 3], ["created_at", "2015-02-02 14:55:01.215026"], ["updated_at", "2015-02-02 14:55:01.215026"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Voluptas nihil placeat in cumque necessitatibus harum vero."], ["user_id", 2], ["created_at", "2015-02-02 14:55:01.217788"], ["updated_at", "2015-02-02 14:55:01.217788"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Voluptas nihil placeat in cumque necessitatibus harum vero."], ["user_id", 5], ["created_at", "2015-02-02 14:55:01.220470"], ["updated_at", "2015-02-02 14:55:01.220470"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Voluptas nihil placeat in cumque necessitatibus harum vero."], ["user_id", 1], ["created_at", "2015-02-02 14:55:01.223274"], ["updated_at", "2015-02-02 14:55:01.223274"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Praesentium rerum reiciendis quaerat aperiam."], ["user_id", 3], ["created_at", "2015-02-02 14:55:01.226481"], ["updated_at", "2015-02-02 14:55:01.226481"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Praesentium rerum reiciendis quaerat aperiam."], ["user_id", 2], ["created_at", "2015-02-02 14:55:01.229344"], ["updated_at", "2015-02-02 14:55:01.229344"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Praesentium rerum reiciendis quaerat aperiam."], ["user_id", 5], ["created_at", "2015-02-02 14:55:01.232302"], ["updated_at", "2015-02-02 14:55:01.232302"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Praesentium rerum reiciendis quaerat aperiam."], ["user_id", 1], ["created_at", "2015-02-02 14:55:01.235001"], ["updated_at", "2015-02-02 14:55:01.235001"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Eveniet atque ducimus necessitatibus sed."], ["user_id", 3], ["created_at", "2015-02-02 14:55:01.237830"], ["updated_at", "2015-02-02 14:55:01.237830"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Eveniet atque ducimus necessitatibus sed."], ["user_id", 2], ["created_at", "2015-02-02 14:55:01.240583"], ["updated_at", "2015-02-02 14:55:01.240583"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Eveniet atque ducimus necessitatibus sed."], ["user_id", 5], ["created_at", "2015-02-02 14:55:01.243635"], ["updated_at", "2015-02-02 14:55:01.243635"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Eveniet atque ducimus necessitatibus sed."], ["user_id", 1], ["created_at", "2015-02-02 14:55:01.246541"], ["updated_at", "2015-02-02 14:55:01.246541"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Vel fugit recusandae reiciendis aperiam perferendis qui omnis sint."], ["user_id", 3], ["created_at", "2015-02-02 14:55:01.249554"], ["updated_at", "2015-02-02 14:55:01.249554"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Vel fugit recusandae reiciendis aperiam perferendis qui omnis sint."], ["user_id", 2], ["created_at", "2015-02-02 14:55:01.252516"], ["updated_at", "2015-02-02 14:55:01.252516"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Vel fugit recusandae reiciendis aperiam perferendis qui omnis sint."], ["user_id", 5], ["created_at", "2015-02-02 14:55:01.255279"], ["updated_at", "2015-02-02 14:55:01.255279"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Vel fugit recusandae reiciendis aperiam perferendis qui omnis sint."], ["user_id", 1], ["created_at", "2015-02-02 14:55:01.258521"], ["updated_at", "2015-02-02 14:55:01.258521"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Debitis qui consequuntur sequi provident voluptatem quis fugiat omnis."], ["user_id", 3], ["created_at", "2015-02-02 14:55:01.262103"], ["updated_at", "2015-02-02 14:55:01.262103"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Debitis qui consequuntur sequi provident voluptatem quis fugiat omnis."], ["user_id", 2], ["created_at", "2015-02-02 14:55:01.265757"], ["updated_at", "2015-02-02 14:55:01.265757"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Debitis qui consequuntur sequi provident voluptatem quis fugiat omnis."], ["user_id", 5], ["created_at", "2015-02-02 14:55:01.269070"], ["updated_at", "2015-02-02 14:55:01.269070"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["content", "Debitis qui consequuntur sequi provident voluptatem quis fugiat omnis."], ["user_id", 1], ["created_at", "2015-02-02 14:55:01.272525"], ["updated_at", "2015-02-02 14:55:01.272525"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
